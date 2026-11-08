@@ -2,385 +2,167 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ЧУП «ДК-ПромМаш» — Капитальный ремонт металлообрабатывающих станков</title>
-<meta name="description" content="Средний и капитальный ремонт металлообрабатывающих станков и КПО. Ремонт токарных станков ДИП 300, ДИП 500. Минск.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ДК-ПромМаш — капитальный ремонт металлообрабатывающих станков | Минск</title>
+<meta name="description" content="ЧУП «ДК-ПромМаш»: средний и капитальный ремонт металлообрабатывающих станков и КПО. Ремонт токарных станков ДИП-300, ДИП-500. Минск, Партизанский район. +375 (29) 645-65-55">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --orange:#ff6b00;
-  --orange-d:#e05a00;
-  --dark:#0a0c10;
-  --dark2:#12161d;
-  --panel:#161b23;
-  --steel:#2a3340;
-  --text:#e8ecf2;
-  --muted:#9aa5b4;
-  --line:rgba(255,255,255,.08);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;line-height:1.6}
-h1,h2,h3,.head{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.5px}
-a{color:inherit;text-decoration:none}
-img{max-width:100%}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
-header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(10,12,16,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:.3s}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:12px;font-family:'Oswald';font-weight:700;font-size:20px}
-.logo .gear{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--orange),var(--orange-d));display:grid;place-items:center;font-size:22px;box-shadow:0 0 22px rgba(255,107,0,.45);animation:spin 9s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.logo b{color:var(--orange)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{color:var(--muted);font-weight:500;font-size:15px;transition:.25s;position:relative}
-.nav-links a:hover{color:var(--text)}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--orange);transition:.3s}
-.nav-links a:hover::after{width:100%}
-.nav-phone{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff!important;padding:11px 20px;border-radius:9px;font-weight:600;box-shadow:0 6px 20px rgba(255,107,0,.35);transition:.25s}
-.nav-phone:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,107,0,.5)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.burger span{width:26px;height:3px;background:var(--text);border-radius:3px;transition:.3s}
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;z-index:2;padding-top:72px}
-.hero-inner{max-width:720px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,0,.12);border:1px solid rgba(255,107,0,.3);color:var(--orange);padding:8px 16px;border-radius:30px;font-size:13px;font-weight:600;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase;animation:fadeUp .8s both}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-size:clamp(38px,6vw,76px);line-height:1.02;margin-bottom:22px;animation:fadeUp .8s .1s both}
-.hero h1 span{color:var(--orange);display:inline-block;position:relative}
-.hero p{font-size:clamp(16px,2vw,20px);color:var(--muted);margin-bottom:36px;max-width:560px;animation:fadeUp .8s .2s both}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .8s .3s both}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:11px;font-weight:600;font-size:16px;cursor:pointer;transition:.28s;border:none}
-.btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange-d));color:#fff;box-shadow:0 10px 30px rgba(255,107,0,.4)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,107,0,.55)}
-.btn-ghost{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text)}
-.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--orange)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
-.hero-stats{display:flex;gap:40px;margin-top:60px;flex-wrap:wrap;animation:fadeUp .8s .45s both}
-.stat h3{font-size:42px;color:var(--orange);line-height:1}
-.stat p{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
-.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp 1s 1s both}
-.mouse{width:24px;height:38px;border:2px solid var(--muted);border-radius:14px;position:relative}
-.mouse::after{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:4px;height:7px;background:var(--orange);border-radius:3px;animation:scroll 1.6s infinite}
-@keyframes scroll{0%{opacity:1;top:7px}100%{opacity:0;top:18px}}
-section{position:relative;z-index:2;padding:110px 0}
-.sec-head{text-align:center;margin-bottom:60px}
-.sec-head .eyebrow{color:var(--orange);font-weight:600;letter-spacing:3px;font-size:14px;text-transform:uppercase;margin-bottom:14px;display:block}
-.sec-head h2{font-size:clamp(30px,4vw,52px);line-height:1.1}
-.sec-head p{color:var(--muted);max-width:620px;margin:18px auto 0;font-size:17px}
-.reveal{opacity:0;transform:translateY(50px);transition:.8s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
-.card{background:linear-gradient(160deg,var(--panel),var(--dark2));border:1px solid var(--line);border-radius:18px;padding:34px 30px;transition:.35s;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;inset:0;background:radial-gradient(400px at var(--mx,50%) var(--my,0%),rgba(255,107,0,.12),transparent 60%);opacity:0;transition:.3s}
-.card:hover::before{opacity:1}
-.card:hover{transform:translateY(-8px);border-color:rgba(255,107,0,.4);box-shadow:0 24px 50px rgba(0,0,0,.5)}
-.card .ic{width:62px;height:62px;border-radius:14px;display:grid;place-items:center;font-size:30px;background:linear-gradient(135deg,rgba(255,107,0,.2),rgba(255,107,0,.05));border:1px solid rgba(255,107,0,.25);margin-bottom:22px}
-.card h3{font-size:22px;margin-bottom:12px}
-.card p{color:var(--muted);font-size:15px}
-.dip{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
-.dip-visual{position:relative;height:420px;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,var(--steel),var(--dark2));border:1px solid var(--line)}
-#lathe-canvas{width:100%;height:100%;display:block}
-.dip-visual .tag{position:absolute;top:20px;left:20px;background:rgba(10,12,16,.7);backdrop-filter:blur(8px);padding:8px 16px;border-radius:30px;font-size:13px;font-weight:600;color:var(--orange);border:1px solid rgba(255,107,0,.3);z-index:3}
-.dip-visual .hint{position:absolute;bottom:18px;right:20px;font-size:12px;color:var(--muted);z-index:3}
-.dip-text h2{font-size:clamp(28px,3.5vw,46px);margin-bottom:20px}
-.dip-text h2 b{color:var(--orange)}
-.dip-text p{color:var(--muted);margin-bottom:26px;font-size:17px}
-.dip-list{list-style:none;display:flex;flex-direction:column;gap:14px}
-.dip-list li{display:flex;align-items:center;gap:14px;font-size:16px}
-.dip-list .ck{min-width:26px;height:26px;border-radius:7px;background:rgba(255,107,0,.15);color:var(--orange);display:grid;place-items:center;font-weight:700}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;counter-reset:s}
-.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px 26px;position:relative;transition:.3s}
-.step:hover{border-color:rgba(255,107,0,.4);transform:translateY(-6px)}
-.step .num{font-family:'Oswald';font-size:54px;color:rgba(255,107,0,.25);font-weight:700;line-height:1}
-.step h3{font-size:19px;margin:10px 0 10px}
-.step p{color:var(--muted);font-size:14px}
-.cta{background:linear-gradient(120deg,var(--orange),var(--orange-d));border-radius:26px;padding:60px 50px;text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(255,107,0,.3)}
-.cta::before,.cta::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
-.cta::before{width:300px;height:300px;top:-120px;right:-80px}
-.cta::after{width:200px;height:200px;bottom:-100px;left:-40px}
-.cta h2{color:#fff;font-size:clamp(28px,4vw,46px);margin-bottom:16px;position:relative}
-.cta p{color:rgba(255,255,255,.9);font-size:18px;margin-bottom:30px;position:relative}
-.cta .btn-white{background:#fff;color:var(--orange-d);position:relative;font-size:18px;padding:18px 40px}
-.cta .btn-white:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:22px}
-.ci{display:flex;gap:18px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:14px;transition:.3s}
-.ci:hover{border-color:rgba(255,107,0,.4);transform:translateX(6px)}
-.ci .ic{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange-d));display:grid;place-items:center;font-size:24px;flex-shrink:0}
-.ci h4{font-family:'Oswald';font-size:18px;margin-bottom:4px}
-.ci p,.ci a{color:var(--muted);font-size:15px}
-.ci a:hover{color:var(--orange)}
-form{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:36px}
-form h3{font-size:24px;margin-bottom:22px}
-.field{margin-bottom:18px}
-.field input,.field textarea{width:100%;background:var(--dark2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--text);font-size:15px;font-family:inherit;transition:.25s}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,.15)}
-.field textarea{resize:vertical;min-height:110px}
-form .btn{width:100%;justify-content:center}
-footer{position:relative;z-index:2;background:var(--dark2);border-top:1px solid var(--line);padding:50px 0 30px;margin-top:30px}
-.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.foot p{color:var(--muted);font-size:14px}
-.foot .logo{font-size:18px}
-@media(max-width:860px){
-  .nav-links{display:none}
-  .burger{display:flex}
-  .dip,.contact-wrap{grid-template-columns:1fr}
-  .dip-visual{height:320px}
-  .hero-stats{gap:28px}
-  .stat h3{font-size:34px}
-  section{padding:80px 0}
-  .cta{padding:44px 26px}
-}
-.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--orange);color:#fff;padding:16px 28px;border-radius:12px;font-weight:600;z-index:999;transition:.4s;box-shadow:0 12px 30px rgba(255,107,0,.5)}
-.toast.show{transform:translateX(-50%) translateY(0)}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
-
 <header>
-  <div class="container nav">
-    <div class="logo"><span class="gear">⚙</span> ДК-<b>ПромМаш</b></div>
-    <nav class="nav-links">
-      <a href="#services">Услуги</a>
-      <a href="#dip">Станки ДИП</a>
-      <a href="#process">Как работаем</a>
-      <a href="#contact">Контакты</a>
-      <a href="tel:+375296456555" class="nav-phone">+375 (29) 645-65-55</a>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><i></i><span>ДК-ПромМаш<small>ремонт станков · Минск</small></span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="on">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="equipment.html">Станки</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
     </nav>
-    <div class="burger" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'"><span></span><span></span><span></span></div>
+    <a href="tel:+375296456555" class="btn" style="padding:.7rem 1.1rem;font-size:.9rem">+375 29 645-65-55</a>
+    <button class="burger" aria-label="Меню">≡</button>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="badge"><span class="dot"></span> Минск · Партизанский район</div>
-    <h1>Капитальный ремонт <span>металлообрабатывающих</span> станков</h1>
-    <p>Средний и капитальный ремонт станков и КПО. Работаем на своих площадях и на площадях Заказчика. Возвращаем оборудованию заводскую точность.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn btn-primary">Заказать ремонт →</a>
-      <a href="#dip" class="btn btn-ghost">⚙ Специализация ДИП</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><h3>15+</h3><p>лет опыта</p></div>
-      <div class="stat"><h3>ДИП 300/500</h3><p>приоритет</p></div>
-      <div class="stat"><h3>100%</h3><p>контроль точности</p></div>
-    </div>
-  </div>
-  <div class="scroll-ind"><div class="mouse"></div>Листайте вниз</div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Что мы делаем</span>
-      <h2>Наши услуги</h2>
-      <p>Полный цикл восстановления металлообрабатывающего оборудования и кузнечно-прессовых машин.</p>
-    </div>
-    <div class="grid">
-      <div class="card reveal"><div class="ic">🔧</div><h3>Капитальный ремонт</h3><p>Полное восстановление станка: разборка, дефектовка узлов, шлифовка направляющих, замена изношенных деталей, сборка и настройка.</p></div>
-      <div class="card reveal"><div class="ic">⚙️</div><h3>Средний ремонт</h3><p>Восстановление работоспособности и геометрической точности без полной разборки — быстро и с минимальным простоем производства.</p></div>
-      <div class="card reveal"><div class="ic">🏭</div><h3>Ремонт КПО</h3><p>Ремонт кузнечно-прессового оборудования: прессы, ножницы, молоты. Восстановление механики и гидравлики.</p></div>
-      <div class="card reveal"><div class="ic">📋</div><h3>Техническое заключение</h3><p>Выезд и осмотр станка на предмет технического состояния с оформлением официального заключения и рекомендаций.</p></div>
-      <div class="card reveal"><div class="ic">📍</div><h3>Ремонт у Заказчика</h3><p>Выполняем работы на площадях Заказчика — без демонтажа и дорогостоящей транспортировки тяжёлого оборудования.</p></div>
-      <div class="card reveal"><div class="ic">🎯</div><h3>Восстановление точности</h3><p>Шлифовка и шабрение направляющих, выставление геометрии, проверка по ГОСТ. Станок работает как новый.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="dip">
-  <div class="container">
-    <div class="dip">
-      <div class="dip-visual reveal">
-        <span class="tag">● 3D · Токарный станок</span>
-        <canvas id="lathe-canvas"></canvas>
-        <span class="hint">наведите мышь</span>
+  <canvas id="hero3d"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="kicker rv">ЧУП «ДК-ПромМаш» · с 2014 года</div>
+      <h1 class="rv" style="margin-top:1.2rem">Ремонт<br>станков,<br>а не <span>отговорки</span></h1>
+      <p class="lead rv" style="margin-top:1.6rem">Средний и капитальный ремонт металлообрабатывающих станков и КПО. На своих площадях или у Заказчика. С осмотром, дефектовкой и техническим заключением.</p>
+      <div class="tags rv">
+        <span class="tag">ДИП-300</span>
+        <span class="tag">ДИП-500</span>
+        <span class="tag">КПО</span>
+        <span class="tag">Выезд на производство</span>
+        <span class="tag">Дефектовка</span>
       </div>
-      <div class="dip-text reveal">
-        <span class="eyebrow" style="color:var(--orange);font-weight:600;letter-spacing:3px;font-size:14px;text-transform:uppercase">Наша специализация</span>
-        <h2>Токарные станки <b>ДИП 300</b> и <b>ДИП 500</b></h2>
-        <p>Эти станки — наш приоритет. Знаем каждый узел, держим оснастку и запчасти, восстанавливаем геометрию до паспортных значений.</p>
-        <ul class="dip-list">
-          <li><span class="ck">✓</span> Шлифовка и шабрение станины</li>
-          <li><span class="ck">✓</span> Ремонт шпиндельной бабки и коробки подач</li>
-          <li><span class="ck">✓</span> Восстановление суппортной группы</li>
-          <li><span class="ck">✓</span> Регулировка и проверка по ГОСТ</li>
-        </ul>
+      <div class="cta rv">
+        <a href="tel:+375296456555" class="btn">Позвонить мастеру</a>
+        <a href="services.html" class="btn ghost">Что мы делаем</a>
       </div>
     </div>
+    <aside class="spec rv">
+      <dl>
+        <dt><span class="live"></span>Принимаем заявки</dt>
+        <dd>Пн–Пт 8:00–18:00</dd>
+        <dt>Телефон</dt>
+        <dd><a href="tel:+375296456555">+375 (29) 645-65-55</a></dd>
+        <dt>Адрес</dt>
+        <dd style="font-size:1.15rem">г. Минск,<br>Партизанский район</dd>
+        <dt>Специализация</dt>
+        <dd style="font-size:1.15rem">Токарные ДИП-300 / ДИП-500</dd>
+      </dl>
+    </aside>
+  </div>
+  <div class="scroll-hint">↓ прокрутите</div>
+</section>
+
+<div class="marquee"><div>
+  <span>Капитальный ремонт</span><span>◆</span><span>Средний ремонт</span><span>◆</span><span>ДИП-300</span><span>◆</span><span>ДИП-500</span><span>◆</span><span>КПО</span><span>◆</span><span>Техническое заключение</span><span>◆</span>
+  <span>Капитальный ремонт</span><span>◆</span><span>Средний ремонт</span><span>◆</span><span>ДИП-300</span><span>◆</span><span>ДИП-500</span><span>◆</span><span>КПО</span><span>◆</span><span>Техническое заключение</span><span>◆</span>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="kicker rv">01 — Кто мы</div>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">Возвращаем станки<br>в строй, а не в металлолом</h2>
+    <p class="lead rv" style="margin-top:1rem">Капитальный ремонт станка стоит в разы дешевле нового оборудования и, при правильной дефектовке, даёт ресурс ещё на годы работы. Мы разбираем, дефектуем, восстанавливаем и собираем — с контролем геометрии и испытанием под нагрузкой.</p>
+
+    <div class="grid g3" style="margin-top:3.5rem">
+      <article class="card rv"><span class="corner"></span><div class="idx">/ 01</div>
+        <h3>Капремонт</h3>
+        <p>Полная разборка, дефектовка узлов, восстановление или замена изношенных деталей, сборка и регулировка.</p>
+        <ul><li>Станина и направляющие</li><li>Шпиндельный узел</li><li>Коробка скоростей и подач</li></ul>
+      </article>
+      <article class="card rv"><span class="corner"></span><div class="idx">/ 02</div>
+        <h3>Средний ремонт</h3>
+        <p>Восстановление работоспособности без полной переборки — когда станок ещё «живой», но точность уже ушла.</p>
+        <ul><li>Замена подшипников</li><li>Регулировка зазоров</li><li>Восстановление геометрии</li></ul>
+      </article>
+      <article class="card rv"><span class="corner"></span><div class="idx">/ 03</div>
+        <h3>Осмотр и заключение</h3>
+        <p>Выезд специалиста, оценка технического состояния и письменное заключение с перечнем работ и объёмом затрат.</p>
+        <ul><li>Замер износа</li><li>Проверка точности</li><li>Смета на ремонт</li></ul>
+      </article>
+    </div>
   </div>
 </section>
 
-<section id="process">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Порядок работы</span>
-      <h2>Как мы работаем</h2>
-    </div>
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker rv">02 — Как работаем</div>
+    <h2 class="rv" style="margin-top:1rem">Пять шагов</h2>
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3>Заявка</h3><p>Вы оставляете заявку по телефону или через форму. Уточняем модель станка и проблему.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3>Осмотр и дефектовка</h3><p>Выезжаем, проводим осмотр, определяем состояние и объём работ, даём заключение.</p></div>
-      <div class="step reveal"><div class="num">03</div><h3>Ремонт</h3><p>Выполняем ремонт на своей базе или у вас. Восстанавливаем узлы и геометрию.</p></div>
-      <div class="step reveal"><div class="num">04</div><h3>Сдача и проверка</h3><p>Настраиваем, проверяем точность и передаём работоспособный станок Заказчику.</p></div>
+      <div class="step rv"><b>1</b><div><h4>Звонок</h4><p>Обсуждаем модель, симптомы, сроки</p></div></div>
+      <div class="step rv"><b>2</b><div><h4>Осмотр</h4><p>Выезд на площадку, замеры</p></div></div>
+      <div class="step rv"><b>3</b><div><h4>Заключение</h4><p>Дефектовка и смета</p></div></div>
+      <div class="step rv"><b>4</b><div><h4>Ремонт</h4><p>Наши площади или ваши</p></div></div>
+      <div class="step rv"><b>5</b><div><h4>Сдача</h4><p>Испытания, геометрия, акт</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Не уверены, что станок ремонтопригоден?</div>
+      <p style="margin-top:.8rem;color:#b3b7bd;max-width:48ch">Позвоните — скажем честно, есть ли смысл вкладываться в этот узел. Осмотр с заключением.</p>
+    </div>
+    <div>
+      <a href="tel:+375296456555" class="phone-big">+375 29 645-65-55</a>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="cta reveal">
-      <h2>Нужен ремонт станка?</h2>
-      <p>Позвоните — оценим состояние вашего оборудования и предложим решение.</p>
-      <a href="tel:+375296456555" class="btn btn-white">📞 +375 (29) 645-65-55</a>
-    </div>
-  </div>
-</section>
-<section id="contact">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Связаться с нами</span>
-      <h2>Контакты</h2>
-    </div>
-    <div class="contact-wrap">
-      <div class="contact-info reveal">
-        <div class="ci"><div class="ic">📞</div><div><h4>Телефон</h4><a href="tel:+375296456555">+375 (29) 645-65-55</a></div></div>
-        <div class="ci"><div class="ic">📍</div><div><h4>Местоположение</h4><p>г. Минск, Партизанский район</p></div></div>
-        <div class="ci"><div class="ic">🏢</div><div><h4>Компания</h4><p>ЧУП «ДК-ПромМаш»</p></div></div>
-        <div class="ci"><div class="ic">⏱</div><div><h4>Приём заявок</h4><p>Пн–Пт · оперативный выезд на осмотр</p></div></div>
+  <div class="wrap">
+    <div class="grid g2" style="align-items:center;gap:50px">
+      <div class="rv">
+        <div class="kicker">03 — Специализация</div>
+        <h2 style="margin-top:1rem">ДИП-300<br>и ДИП-500</h2>
+        <p class="lead" style="margin-top:1rem">Это наши приоритетные машины. Знаем их устройство до последнего винта, держим понимание типовых износов и последовательности восстановления геометрии.</p>
+        <a href="equipment.html" class="btn" style="margin-top:1.8rem">Подробнее о станках</a>
       </div>
-      <form onsubmit="return sendForm(event)">
-        <h3>Оставить заявку</h3>
-        <div class="field"><input type="text" placeholder="Ваше имя" required></div>
-        <div class="field"><input type="tel" placeholder="Телефон" required></div>
-        <div class="field"><input type="text" placeholder="Модель станка (напр. ДИП 300)"></div>
-        <div class="field"><textarea placeholder="Опишите проблему или задачу"></textarea></div>
-        <button type="submit" class="btn btn-primary">Отправить заявку →</button>
-      </form>
+      <div class="card rv" style="padding:0;border:0;background:none">
+        <div class="viewer" style="height:420px;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,#1d2024,#0c0d0f);position:relative">
+          <canvas id="machine3d" style="width:100%;height:100%"></canvas>
+          <div class="lbl">интерактивная модель · потяните мышью</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container foot">
-    <div class="logo"><span class="gear">⚙</span> ДК-<b style="color:var(--orange)">ПромМаш</b></div>
-    <p>© 2026 ЧУП «ДК-ПромМаш» · Ремонт металлообрабатывающих станков · Минск</p>
-    <p><a href="tel:+375296456555" style="color:var(--orange)">+375 (29) 645-65-55</a></p>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="margin-bottom:1rem"><i></i><span>ДК-ПромМаш<small>ЧУП · Минск</small></span></div>
+      <p style="max-width:38ch">Средний и капитальный ремонт металлообрабатывающих станков и КПО. Ремонт на своих площадях и на площадях Заказчика.</p>
+    </div>
+    <div>
+      <h4>Разделы</h4>
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="equipment.html">Станки</a>
+      <a href="contacts.html">Контакты</a>
+    </div>
+    <div>
+      <h4>Связь</h4>
+      <a href="tel:+375296456555">+375 (29) 645-65-55</a>
+      <a href="contacts.html">г. Минск, Партизанский р-н</a>
+      <p>Пн–Пт 8:00–18:00</p>
+    </div>
+    <div class="copy">© <span id="y"></span> ЧУП «ДК-ПромМаш». Все права защищены.</div>
   </div>
 </footer>
 
-<div class="toast" id="toast">✓ Заявка отправлена! Мы перезвоним.</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-(function(){
-  const canvas=document.getElementById('bg-canvas');
-  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  renderer.setSize(innerWidth,innerHeight);
-  const scene=new THREE.Scene();
-  scene.fog=new THREE.FogExp2(0x0a0c10,0.03);
-  const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,100);
-  camera.position.z=14;
-  const key=new THREE.DirectionalLight(0xffffff,1.1);key.position.set(5,8,6);scene.add(key);
-  const orange=new THREE.PointLight(0xff6b00,2.4,40);orange.position.set(-6,2,8);scene.add(orange);
-  scene.add(new THREE.AmbientLight(0x404a5a,0.9));
-  function makeGear(r,teeth,h){
-    const shape=new THREE.Shape();
-    const tooth=0.28*r, inner=r;
-    for(let i=0;i<teeth;i++){
-      const a=(i/teeth)*Math.PI*2, a2=((i+0.5)/teeth)*Math.PI*2, a3=((i+1)/teeth)*Math.PI*2;
-      const o=inner+tooth;
-      if(i===0)shape.moveTo(Math.cos(a)*o,Math.sin(a)*o);
-      else shape.lineTo(Math.cos(a)*o,Math.sin(a)*o);
-      shape.lineTo(Math.cos(a2)*inner,Math.sin(a2)*inner);
-      shape.lineTo(Math.cos(a3)*o,Math.sin(a3)*o);
-    }
-    const hole=new THREE.Path();hole.absarc(0,0,r*0.4,0,Math.PI*2,true);shape.holes.push(hole);
-    const geo=new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:true,bevelThickness:0.06,bevelSize:0.06,bevelSegments:2});
-    geo.center();
-    return geo;
-  }
-  const gears=[];
-  const specs=[
-    {r:2.2,t:14,h:0.5,x:-7,y:3,z:-2,c:0xff6b00,s:0.004},
-    {r:1.5,t:12,h:0.4,x:7,y:-3,z:-3,c:0x8793a3,s:-0.006},
-    {r:1.0,t:10,h:0.35,x:5,y:4,z:-5,c:0xff6b00,s:0.008},
-    {r:1.8,t:13,h:0.45,x:-6,y:-4,z:-4,c:0x5a6676,s:-0.005},
-    {r:0.9,t:9,h:0.3,x:0,y:5.5,z:-6,c:0x8793a3,s:0.007},
-  ];
-  specs.forEach(sp=>{
-    const mat=new THREE.MeshStandardMaterial({color:sp.c,metalness:0.9,roughness:0.35});
-    const m=new THREE.Mesh(makeGear(sp.r,sp.t,sp.h),mat);
-    m.position.set(sp.x,sp.y,sp.z);m.rotation.x=0.4;
-    m.userData.s=sp.s;scene.add(m);gears.push(m);
-  });
-  const pc=260,pg=new THREE.BufferGeometry(),pos=new Float32Array(pc*3);
-  for(let i=0;i<pc*3;i++)pos[i]=(Math.random()-0.5)*40;
-  pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
-  const pm=new THREE.PointsMaterial({color:0xff6b00,size:0.07,transparent:true,opacity:0.7});
-  const pts=new THREE.Points(pg,pm);scene.add(pts);
-  let mx=0,my=0;
-  addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-0.5);my=(e.clientY/innerHeight-0.5)});
-  let sy=0;addEventListener('scroll',()=>sy=scrollY);
-  function animate(){
-    requestAnimationFrame(animate);
-    gears.forEach(g=>{g.rotation.z+=g.userData.s});
-    pts.rotation.y+=0.0006;
-    camera.position.x+=(mx*3-camera.position.x)*0.04;
-    camera.position.y+=(-my*3-(-sy*0.004)-camera.position.y)*0.04;
-    camera.lookAt(0,-sy*0.004,0);
-    renderer.render(scene,camera);
-  }
-  animate();
-  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
-})();
-(function(){
-  const canvas=document.getElementById('lathe-canvas');
-  if(!canvas)return;
-  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  function size(){const r=canvas.parentElement.getBoundingClientRect();renderer.setSize(r.width,r.height);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()}
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(45,1.5,0.1,100);camera.position.set(6,4,8);
-  scene.add(new THREE.AmbientLight(0x6a7585,0.9));
-  const d=new THREE.DirectionalLight(0xffffff,1.2);d.position.set(5,8,5);scene.add(d);
-  const o=new THREE.PointLight(0xff6b00,2,30);o.position.set(-4,3,4);scene.add(o);
-  const group=new THREE.Group();scene.add(group);
-  const steel=new THREE.MeshStandardMaterial({color:0x6a7585,metalness:0.85,roughness:0.4});
-  const orangeM=new THREE.MeshStandardMaterial({color:0xff6b00,metalness:0.7,roughness:0.4});
-  const dark=new THREE.MeshStandardMaterial({color:0x2a3340,metalness:0.6,roughness:0.6});
-  const bed=new THREE.Mesh(new THREE.BoxGeometry(7,0.5,2),dark);bed.position.y=-1.2;group.add(bed);
-  [-2.8,2.8].forEach(x=>{const l=new THREE.Mesh(new THREE.BoxGeometry(0.8,1.6,1.6),dark);l.position.set(x,-2.2,0);group.add(l)});
-  const hs=new THREE.Mesh(new THREE.BoxGeometry(1.8,1.8,1.8),orangeM);hs.position.set(-2.5,-0.1,0);group.add(hs);
-  const chuck=new THREE.Mesh(new THREE.CylinderGeometry(0.75,0.75,0.5,24),steel);chuck.rotation.z=Math.PI/2;chuck.position.set(-1.4,-0.1,0);group.add(chuck);
-  for(let i=0;i<3;i++){const j=new THREE.Mesh(new THREE.BoxGeometry(0.2,0.5,0.2),dark);const a=i/3*Math.PI*2;j.position.set(-1.15,-0.1+Math.cos(a)*0.4,Math.sin(a)*0.4);group.add(j)}
-  const wp=new THREE.Mesh(new THREE.CylinderGeometry(0.35,0.35,3.2,24),new THREE.MeshStandardMaterial({color:0xaeb8c4,metalness:0.95,roughness:0.2}));
-  wp.rotation.z=Math.PI/2;wp.position.set(0.7,-0.1,0);group.add(wp);
-  const ts=new THREE.Mesh(new THREE.BoxGeometry(1.2,1.4,1.4),steel);ts.position.set(2.6,-0.2,0);group.add(ts);
-  const car=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.9,2.2),orangeM);car.position.set(0.6,-0.75,0);group.add(car);
-  const tool=new THREE.Mesh(new THREE.BoxGeometry(0.2,0.6,0.2),dark);tool.position.set(0.6,-0.1,0.3);group.add(tool);
-  group.position.y=0.3;
-  let mx=0,my=0,tx=0,ty=0;
-  canvas.parentElement.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mx=((e.clientX-r.left)/r.width-0.5);my=((e.clientY-r.top)/r.height-0.5)});
-  function loop(){
-    requestAnimationFrame(loop);
-    tx+=(mx-tx)*0.06;ty+=(my-ty)*0.06;
-    group.rotation.y=0.5+tx*1.2 + performance.now()*0.0002;
-    group.rotation.x=-0.1+ty*0.5;
-    wp.rotation.x+=0.15;chuck.rotation.x+=0.15;
-    renderer.render(scene,camera);
-  }
-  size();loop();
-  addEventListener('resize',size);
-})();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.08)+'s';io.observe(el)});
-document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
-function sendForm(e){e.preventDefault();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);e.target.reset();return false}
-addEventListener('scroll',()=>{document.querySelector('header').style.boxShadow=scrollY>30?'0 8px 30px rgba(0,0,0,.4)':'none'});
-</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
