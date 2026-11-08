@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Контакты — ЧУП «ДК-ПромМаш», Минск</title>
+<meta name="description" content="ЧУП «ДК-ПромМаш», Минск, Партизанский район. Телефон +375 (29) 645-65-55. Ремонт металлообрабатывающих станков и КПО.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><i></i><span>ДК-ПромМаш<small>ремонт станков · Минск</small></span></a>
+    <nav><ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="services.html">Услуги</a></li>
+      <li><a href="equipment.html">Станки</a></li>
+      <li><a href="contacts.html" class="on">Контакты</a></li>
+    </ul></nav>
+    <a href="tel:+375296456555" class="btn" style="padding:.7rem 1.1rem;font-size:.9rem">+375 29 645-65-55</a>
+    <button class="burger" aria-label="Меню">≡</button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:60px">
+  <div class="wrap">
+    <div class="crumbs">Главная / Контакты</div>
+    <h1>Контакты</h1>
+    <p class="lead" style="margin-top:1.2rem">Позвоните — быстрее всего решается именно так. Или напишите, мы вернёмся с оценкой.</p>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <div class="info-row"><i>Телефон</i><a href="tel:+375296456555">+375 (29) 645-65-55</a></div>
+      <div class="info-row"><i>Организация</i><span>ЧУП «ДК-ПромМаш»</span></div>
+      <div class="info-row"><i>Адрес</i><span>г. Минск,<br>Партизанский район</span></div>
+      <div class="info-row"><i>Режим</i><span>Пн–Пт 8:00–18:00</span></div>
+      <div class="info-row"><i>Выезд</i><span>По Минску и области</span></div>
+
+      <div class="map" style="position:relative">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.60%2C53.87%2C27.72%2C53.93&layer=mapnik&marker=53.90,27.66" style="width:100%;height:100%;border:0" title="Минск, Партизанский район"></iframe>
+      </div>
+      <p style="font-family:var(--f-mono);font-size:.75rem;color:var(--muted);margin-top:.6rem">Точный адрес и схему проезда уточняйте по телефону.</p>
+    </div>
+
+    <form class="rv" onsubmit="event.preventDefault();this.querySelector('.msg').textContent='Заявка сформирована — отправьте её на почту или позвоните нам.';">
+      <h2 style="font-size:1.6rem;margin-bottom:.3rem">Заявка на осмотр</h2>
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:.8rem">Заполните — и позвоните, чтобы мы взяли её в работу сразу.</p>
+      <label>Имя / организация<input type="text" placeholder="ООО «Пример»" required></label>
+      <label>Телефон<input type="tel" placeholder="+375 __ ___-__-__" required></label>
+      <label>Станок / оборудование<input type="text" placeholder="Например: ДИП-500, 1988 г.в."></label>
+      <label>Что случилось<textarea rows="4" placeholder="Симптомы, характер неисправности, где находится оборудование"></textarea></label>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="msg" style="color:var(--ok);font-size:.85rem"></p>
+      <p style="font-family:var(--f-mono);font-size:.72rem;color:var(--muted)">Или сразу: <a href="tel:+375296456555" style="color:var(--acc)">+375 (29) 645-65-55</a></p>
+    </form>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Срочный простой производства?</div>
+      <p style="margin-top:.8rem;color:#b3b7bd">Звоните — обсудим возможность оперативного выезда.</p>
+    </div>
+    <a href="tel:+375296456555" class="phone-big">+375 29 645-65-55</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="margin-bottom:1rem"><i></i><span>ДК-ПромМаш<small>ЧУП · Минск</small></span></div>
+      <p style="max-width:38ch">Средний и капитальный ремонт металлообрабатывающих станков и КПО.</p>
+    </div>
+    <div><h4>Разделы</h4>
+      <a href="index.html">Главная</a><a href="services.html">Услуги</a><a href="equipment.html">Станки</a><a href="contacts.html">Контакты</a>
+    </div>
+    <div><h4>Связь</h4>
+      <a href="tel:+375296456555">+375 (29) 645-65-55</a><a href="contacts.html">г. Минск, Партизанский р-н</a><p>Пн–Пт 8:00–18:00</p>
+    </div>
+    <div class="copy">© <span id="y"></span> ЧУП «ДК-ПромМаш». Все права защищены.</div>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
